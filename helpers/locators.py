@@ -1,0 +1,50 @@
+class PageLocators:
+    # Страница тестового стенда
+    BASE_URL = "https://stellarburgers.nomoreparties.site"
+    # Кнопка "Войти в аккаунт"
+    BUTTON_ENTER_ACCOUNT = ".//button[text()='Войти в аккаунт']"
+    # Кнопка "Войти"
+    BUTTON_ENTER = ".//button[text()='Войти']"
+    # Логотип Stellar Burgers
+    BUTTON_LOGO = ".//div[contains(@class, 'logo')]/a"
+    # Кнопка "Оформить заказ"
+    BUTTON_ORDER = ".//button[text()='Оформить заказ']"
+    # Кнопка "Конструктор"
+    BUTTON_P_CONSTRUCTOR = ".//p[text()='Конструктор']"
+    # Кнопка "Личный Кабинет"
+    BUTTON_P_PERSONAL_ACCOUNT = ".//p[text()='Личный Кабинет']"
+    # Кнопка "Зарегистрироваться"
+    BUTTON_REGISTER = ".//button[text()='Зарегистрироваться']"
+    # Кнопка "Выход"
+    BUTTON_QUIT = ".//button[text()='Выход']"
+    # Поле ввода "Имя"
+    INPUT_NAME = ".//label[text()='Имя']/following-sibling::input"
+    # Поле ввода "Email"
+    INPUT_EMAIL = ".//label[text()='Email']/following-sibling::input"
+    # Поле ввода "Пароль"
+    INPUT_PASSWORD = ".//label[text()='Пароль']/following-sibling::input"
+    # Ссылка "Войти"
+    LINK_ENTER = ".//a[text()='Войти']"
+    # Ссылка "Профиль"
+    LINK_PROFILE = ".//a[text()='Профиль']"
+    # Ссылка "Зарегистрироваться"
+    LINK_REGISTER = ".//a[text()='Зарегистрироваться']"
+    # Ссылка "Восстановить пароль"
+    LINK_RECOVER_PASSWORD = ".//a[text()='Восстановить пароль']"
+    # Секция "Булки"
+    SECTION_BUNS = ".//span[text()='Булки']/parent::div"
+    # Секция "Соусы"
+    SECTION_SAUCES = ".//span[text()='Соусы']/parent::div"
+    # Секция "Начинки"
+    SECTION_FILLING = ".//span[text()='Начинки']/parent::div"
+    # Сообщение об ошибке "Некорректный пароль"
+    TEXT_INCORRECT_PASSWORD = ".//div[contains(@class, 'input_type_password')]/following-sibling::p"
+
+    # Путь URL
+    ROUTES = {
+        "homepage": "/",
+        "forgot-password": "forgot-password",
+        "login": "/login",
+        "profile": "/account/profile",
+        "register": "/register"
+    }
