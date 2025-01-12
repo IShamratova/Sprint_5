@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from helpers.locators import PageLocators
+from helpers.data import TestData
 
 # Фикстура для настройки драйвера
 @pytest.fixture
@@ -12,7 +12,7 @@ def driver():
     driver.maximize_window()
 
     # Открытие страницы тестового стенда
-    driver.get(PageLocators.BASE_URL)
+    driver.get(TestData.BASE_URL)
 
     yield driver
 

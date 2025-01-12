@@ -1,6 +1,4 @@
 class PageLocators:
-    # Страница тестового стенда
-    BASE_URL = "https://stellarburgers.nomoreparties.site"
     # Кнопка "Войти в аккаунт"
     BUTTON_ENTER_ACCOUNT = ".//button[text()='Войти в аккаунт']"
     # Кнопка "Войти"
@@ -39,12 +37,3 @@ class PageLocators:
     SECTION_FILLING = ".//span[text()='Начинки']/parent::div"
     # Сообщение об ошибке "Некорректный пароль"
     TEXT_INCORRECT_PASSWORD = ".//div[contains(@class, 'input_type_password')]/following-sibling::p"
-
-    # Путь URL
-    ROUTES = {
-        "homepage": "/",
-        "forgot-password": "forgot-password",
-        "login": "/login",
-        "profile": "/account/profile",
-        "register": "/register"
-    }

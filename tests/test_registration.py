@@ -3,14 +3,15 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from helpers.data import TestData
 from helpers.locators import PageLocators
-from helpers.methods import first_names, generate_random_email, generate_secure_password, registration_of_new_user, authorization_of_registered_user
+from helpers.methods import generate_random_email, generate_secure_password, registration_of_new_user, authorization_of_registered_user
 
 
 class TestRegistration:
 
     def test_registration_success(self, driver):
-        first_name = random.choice(first_names)
+        first_name = random.choice(TestData.FIRST_NAMES)
         user_email = generate_random_email(first_name)
         secure_password = generate_secure_password()
 
@@ -29,7 +30,7 @@ class TestRegistration:
 
 
     def test_registration_incorrect_password(self, driver):
-        first_name = random.choice(first_names)
+        first_name = random.choice(TestData.FIRST_NAMES)
         user_email = generate_random_email(first_name)
 
         # Вызов метода регистрации нового пользователя с вводом некорректного пароля

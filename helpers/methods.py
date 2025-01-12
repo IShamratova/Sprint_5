@@ -5,20 +5,13 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from helpers.data import TestData
 from helpers.locators import PageLocators
 
-# Список имен и фамилий
-first_names = ["Ivan", "Anna", "Maria", "Petr", "Olga", "Artyom"]
-last_names = ["Ivanov", "Petrov", "Sidorov", "Smirnov", "Komarov", "Mikhaylov"]
-# Список доменов почтовых служб
-email_domains = ["yandex.ru", "mail.ru", "gmail.com", "example.com", "test.com"]
-# Тестовые данные для входа зарегистрированного пользователя
-user_email_for_login = "ivan-ivanov6969@yandex.ru"
-secure_password_for_login = "696969"
 
 def generate_random_email(f_name):
     # Генерация случайного имени и фамилии
-    last_name = random.choice(last_names)
+    last_name = random.choice(TestData.LAST_NAMES)
 
     if f_name[len(f_name) - 1] == "a":
         last_name = last_name + "a"
@@ -26,11 +19,11 @@ def generate_random_email(f_name):
     # Генерация номера когорты (например, от 1 до 50)
     cohort_number = random.randint(1, 50)
 
-    # Случайное число (например, от 0 до 999999)
-    number = random.randint(0, 999999)
+    # Случайное число (например, от 0 до 999)
+    number = random.randint(100, 999)
 
     # Случайный домен из списка
-    email_domain = random.choice(email_domains)
+    email_domain = random.choice(TestData.EMAIL_DOMAINS)
 
     # Формирование email
     email = f"{f_name}{last_name}{cohort_number}{number}@{email_domain}"
@@ -111,4 +104,4 @@ def authorization_of_registered_user(driver, user_email, secure_password):
     time.sleep(1)
 
     # Проверка URL-адреса на соответствие профилю
-    assert driver.current_url == PageLocators.BASE_URL + PageLocators.ROUTES["profile"]
+    assert driver.current_url == TestData.BASE_URL + TestData.ROUTES["profile"]
