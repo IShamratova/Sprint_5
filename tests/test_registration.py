@@ -1,5 +1,4 @@
 import random
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -22,7 +21,6 @@ class TestRegistration:
         WebDriverWait(driver, 10).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER))
         )
-        time.sleep(1)
 
         # Проверка URL-адреса на соответствие профилю внутри этого метода
         # Вызов метода для проверки успешной авторизации

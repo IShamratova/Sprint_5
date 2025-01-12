@@ -1,7 +1,6 @@
 import random
 import string
 import secrets
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -43,7 +42,6 @@ def registration_of_new_user(driver, user_name, user_email, secure_password):
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
     )
-    time.sleep(1)
 
     # Поиск кнопки "Войти в аккаунт" и клик по ней
     driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -52,7 +50,6 @@ def registration_of_new_user(driver, user_name, user_email, secure_password):
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.LINK_REGISTER))
     )
-    time.sleep(1)
 
     driver.find_element(By.XPATH, PageLocators.LINK_REGISTER).click()
 
@@ -60,17 +57,14 @@ def registration_of_new_user(driver, user_name, user_email, secure_password):
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_REGISTER))
     )
-    time.sleep(1)
 
     # Поиск полей и их заполнение
     driver.find_element(By.XPATH, PageLocators.INPUT_NAME).send_keys(user_name)
     driver.find_element(By.XPATH, PageLocators.INPUT_EMAIL).send_keys(user_email)
     driver.find_element(By.XPATH, PageLocators.INPUT_PASSWORD).send_keys(secure_password)
-    time.sleep(1)
 
     # Поиск кнопки "Зарегистрироваться" и клик по ней
     driver.find_element(By.XPATH, PageLocators.BUTTON_REGISTER).click()
-    time.sleep(1)
 
 
 def authorization_of_registered_user(driver, user_email, secure_password):
@@ -78,21 +72,17 @@ def authorization_of_registered_user(driver, user_email, secure_password):
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER))
     )
-    time.sleep(1)
 
     # Поиск полей и их заполнение
     driver.find_element(By.XPATH, PageLocators.INPUT_EMAIL).send_keys(user_email)
     driver.find_element(By.XPATH, PageLocators.INPUT_PASSWORD).send_keys(secure_password)
-    time.sleep(1)
 
     driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER).click()
-    time.sleep(1)
 
     # Явное ожидание для загрузки страницы после входа
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ORDER))
     )
-    time.sleep(1)
 
     # Кликаем по кнопке "Личный Кабинет"
     driver.find_element(By.XPATH, PageLocators.BUTTON_P_PERSONAL_ACCOUNT).click()
@@ -101,7 +91,6 @@ def authorization_of_registered_user(driver, user_email, secure_password):
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.LINK_PROFILE))
     )
-    time.sleep(1)
 
     # Проверка URL-адреса на соответствие профилю
     assert driver.current_url == TestData.BASE_URL + TestData.ROUTES["profile"]

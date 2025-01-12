@@ -1,4 +1,3 @@
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,7 +13,6 @@ class TestLogout:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -26,7 +24,6 @@ class TestLogout:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_QUIT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Выход" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_QUIT).click()
@@ -35,7 +32,6 @@ class TestLogout:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER))
         )
-        time.sleep(1)
 
         # Проверка URL-адреса на соответствие логина
         assert driver.current_url == TestData.BASE_URL + TestData.ROUTES["login"]

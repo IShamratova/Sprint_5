@@ -1,4 +1,3 @@
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,7 +13,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -26,7 +24,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Конструктор" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR).click()
@@ -35,7 +32,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ORDER))
         )
-        time.sleep(1)
 
         # Проверка URL-адреса на соответствие домашней страницы
         assert driver.current_url == TestData.BASE_URL + TestData.ROUTES["homepage"]
@@ -45,7 +41,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -57,7 +52,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_LOGO))
         )
-        time.sleep(1)
 
         # Поиск лого и клик по нему
         driver.find_element(By.XPATH, PageLocators.BUTTON_LOGO).click()
@@ -66,7 +60,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ORDER))
         )
-        time.sleep(1)
 
         # Проверка URL-адреса на соответствие домашней страницы
         assert driver.current_url == TestData.BASE_URL + TestData.ROUTES["homepage"]
@@ -76,7 +69,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_P_PERSONAL_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Личный Кабинет" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_P_PERSONAL_ACCOUNT).click()
@@ -90,7 +82,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -102,7 +93,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Конструктор" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR).click()
@@ -111,18 +101,15 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.SECTION_SAUCES))
         )
-        time.sleep(1)
 
         # Поиск раздела "Соусы" и клик по ней
         driver.find_element(By.XPATH, PageLocators.SECTION_SAUCES).click()
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" in driver.find_element(By.XPATH, PageLocators.SECTION_SAUCES).get_attribute("class")
-        time.sleep(1)
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" not in driver.find_element(By.XPATH, PageLocators.SECTION_BUNS).get_attribute("class")
-        time.sleep(1)
 
         # Поиск раздела "Соусы" и клик по ней
         driver.find_element(By.XPATH, PageLocators.SECTION_BUNS).click()
@@ -131,18 +118,15 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.SECTION_BUNS))
         )
-        time.sleep(1)
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" in driver.find_element(By.XPATH, PageLocators.SECTION_BUNS).get_attribute("class")
-        time.sleep(1)
 
     def test_passage_to_section_sauces(self, driver):
         # Явное ожидание для загрузки страницы
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -154,7 +138,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Конструктор" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR).click()
@@ -163,11 +146,9 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.SECTION_SAUCES))
         )
-        time.sleep(1)
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" not in driver.find_element(By.XPATH, PageLocators.SECTION_SAUCES).get_attribute("class")
-        time.sleep(1)
 
         # Поиск раздела "Соусы" и клик по ней
         driver.find_element(By.XPATH, PageLocators.SECTION_SAUCES).click()
@@ -176,18 +157,15 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.SECTION_SAUCES))
         )
-        time.sleep(1)
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" in driver.find_element(By.XPATH, PageLocators.SECTION_SAUCES).get_attribute("class")
-        time.sleep(1)
 
     def test_passage_to_section_filling(self, driver):
         # Явное ожидание для загрузки страницы
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -199,7 +177,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Конструктор" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_P_CONSTRUCTOR).click()
@@ -208,11 +185,9 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.SECTION_FILLING))
         )
-        time.sleep(1)
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" not in driver.find_element(By.XPATH, PageLocators.SECTION_FILLING).get_attribute("class")
-        time.sleep(1)
 
         # Поиск раздела "Соусы" и клик по ней
         driver.find_element(By.XPATH, PageLocators.SECTION_FILLING).click()
@@ -221,8 +196,6 @@ class TestPassage:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.SECTION_FILLING))
         )
-        time.sleep(1)
 
         # Проверка на присутствие в классах элемента - значения "current", показывающего, что раздел выбран
         assert "current" in driver.find_element(By.XPATH, PageLocators.SECTION_FILLING).get_attribute("class")
-        time.sleep(1)

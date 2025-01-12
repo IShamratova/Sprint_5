@@ -1,4 +1,3 @@
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,7 +13,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -27,7 +25,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_P_PERSONAL_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Личный Кабинет" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_P_PERSONAL_ACCOUNT).click()
@@ -40,7 +37,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -49,7 +45,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.LINK_REGISTER))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Зарегистрироваться" и клик по ней
         driver.find_element(By.XPATH, PageLocators.LINK_REGISTER).click()
@@ -58,7 +53,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_REGISTER))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти" и клик по ней
         driver.find_element(By.XPATH, PageLocators.LINK_ENTER).click()
@@ -71,7 +65,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти в аккаунт" и клик по ней
         driver.find_element(By.XPATH, PageLocators.BUTTON_ENTER_ACCOUNT).click()
@@ -80,7 +73,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.LINK_RECOVER_PASSWORD))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Восстановить пароль" и клик по ней
         driver.find_element(By.XPATH, PageLocators.LINK_RECOVER_PASSWORD).click()
@@ -89,7 +81,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, PageLocators.LINK_ENTER))
         )
-        time.sleep(1)
 
         # Поиск кнопки "Войти" и клик по ней
         driver.find_element(By.XPATH, PageLocators.LINK_ENTER).click()
